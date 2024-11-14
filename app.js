@@ -358,3 +358,12 @@ window.addEventListener('online', function() {
     window.location.href = './index.html'; // Cambia esta ruta a la URL que deseas en caso de reconexión
 });
 
+if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('./service-worker.js').then(() => {
+        console.log('Service Worker registrado con éxito.');
+    }).catch((error) => {
+        console.log('Error al registrar el Service Worker:', error);
+    });
+}
+
+
